@@ -7,3 +7,5 @@ Route::get('profile', function () {
 })->middleware('verified');
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/usuarios', 'UserController@index');
