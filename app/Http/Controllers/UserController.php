@@ -8,6 +8,10 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        return view('auth.register');
     }
 
     /**
@@ -45,7 +49,7 @@ class UserController extends Controller
 
         $usuario->save();
 
-        return redirect('/usuarios.index');
+        return redirect('usuarios');
 
     }
 
@@ -57,7 +61,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('usuarios.show', ['user' => User::findOrFail($id)]);
     }
 
     /**
@@ -78,7 +82,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $usuario = User::findOrFail($id);
 
@@ -87,7 +91,7 @@ class UserController extends Controller
         
         $usuario->update();
 
-        return redirect('/usuarios.index');
+        return redirect('usuarios');
     }
 
     /**
@@ -98,6 +102,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::findOrFail($id);
+
+        $usuario->delete();
+
+        return redirect('/usuarios');
     }
 }

@@ -19,7 +19,7 @@
                      @csrf
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="{{ $user->name }}" placeholder="Escribe tu nombre">   
+                        <input type="text" class="form-control" name="name" value="{{ $user->name }}" placeholder="Escribe tu nombre">   
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
