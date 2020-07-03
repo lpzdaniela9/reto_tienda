@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\UserFormRequest;
+use App\Http\Requests\UserFormRequest;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -45,7 +45,7 @@ class UserController extends Controller
 
         $usuario->save();
 
-        return redirect('/usuarios');
+        return redirect('/usuarios.index');
 
     }
 
@@ -87,7 +87,7 @@ class UserController extends Controller
         
         $usuario->update();
 
-        return redirect('/usuarios');
+        return redirect('/usuarios.index');
     }
 
     /**

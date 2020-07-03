@@ -9,11 +9,11 @@
                      @csrf
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ $user->name}}" placeholder="Escribe tu nombre">   
+                        <input type="text" class="form-control" name="nombre" value="{{ $user->name }}" placeholder="Escribe tu nombre">   
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" value="{{ $user->email}}" placeholder="Escribe tu email">
+                        <input type="email" class="form-control" name="email" value="{{ $user->email }}" placeholder="Escribe tu email">
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <button type="button" class="btn btn-danger">Cancelar</button>
